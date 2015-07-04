@@ -1,0 +1,51 @@
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+int main(){
+	int i = 0;
+	int m = 0, n = 1;
+
+	printf("Welcome!\n");
+	printf("\n");
+	
+	while(1){
+		printf("Please give the number of lines!(Must be odd!)\n");
+		scanf("%d",&i);
+		if(i%2 == 0){
+			printf("Must be odd!\n");
+			return 0;
+		}else{
+			printf("%d lines diamond!\n",i);
+			for(n = 1; n <= ((i+1)/2); n++){
+				
+				for(m = 1; m <= i; m++){
+					if((m < (((i+1)/2) - (n-1))) || (m > (((i+1)/2) + (n-1)))){	
+						printf("-");
+					}else{
+						printf("*");
+					}
+				}
+				printf("\n");				
+			}
+
+			for(n = ((i+1)/2); n >0; n--){
+				
+				for(m = 1; m <= i; m++){
+					if((m < (((i+1)/2) - (n-1))) || (m > (((i+1)/2) + (n-1)))){	
+						printf("-");
+					}else{
+						printf("*");
+					}
+				}
+				printf("\n");				
+			}
+
+
+		}
+	}
+
+	getchar();
+
+	return 0;
+}
